@@ -18,7 +18,7 @@
                                 <h4 class="mb-0 text-uppercase" id="titletable">Manage Category</h4>
                             </div>
                             <div class="col-md-2">
-                                <button type="button" name="create_record" id="create_record" class="text-uppercase create_record btn btn-sm btn-primary">NEW CATEGORY</button>
+                                <button type="button" name="create_record" id="create_record" class="text-uppercase create_record btn btn-sm btn-dark">NEW CATEGORY</button>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                                     <tr>
                                         <td>
                                          
-                                            <button type="button" name="edit" edit="{{  $category->id ?? '' }}"  class="edit btn btn-sm btn-primary">Edit</button>
+                                            <button type="button" name="edit" edit="{{  $category->id ?? '' }}"  class="edit btn btn-sm btn-dark">Edit</button>
                                             <button type="button" name="remove" remove="{{  $category->id ?? '' }}" class="remove btn btn-sm btn-danger">Remove</button>
                                             
                                         </td>
@@ -92,7 +92,7 @@
                         
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" name="action_button" id="action_button" class="btn  btn-primary" value="Save" />
+                        <input type="submit" name="action_button" id="action_button" class="btn  btn-dark" value="Save" />
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
                     </div>
                 </div>

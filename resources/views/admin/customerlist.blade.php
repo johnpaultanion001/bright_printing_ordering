@@ -38,7 +38,7 @@
                                 <tr>
                                  
                                   <td>
-                                  <button type="button" name="edit" edit="{{  $customer->id ?? '' }}"  class="edit  btn btn-sm btn-info">Edit Info</button>
+                                  <button type="button" name="edit" edit="{{  $customer->id ?? '' }}"  class="edit  btn btn-sm btn-dark">Edit Info</button>
                                   </td>
                                   <td>
                                       {{  $customer->name ?? '' }}
@@ -124,7 +124,7 @@
 
             <div class="modal-footer">
             <button type="button" id="password_default" class="btn btn-warning">Set A Default Password</button>
-              <input type="submit" name="action_button" id="action_button" class="btn btn-primary" value="Save" />
+              <input type="submit" name="action_button" id="action_button" class="btn btn-dark value="Save" />
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
             </div>
           </div>

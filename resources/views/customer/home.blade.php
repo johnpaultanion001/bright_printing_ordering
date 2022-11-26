@@ -19,56 +19,58 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
     </div>
 </header>
 
-<section class="py-5" style="margin-top: -120px; min-height: 60vh;" >
-    <div class="container" >
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" id="search-bar" placeholder="Find a product?">
-                        <img class="search-icon" src="{{URL::asset('/assets/img/search-icon.png')}}">
-                    </div>
-                    <div class="col-6">
-                        <select name="filter_category" id="filter_category" style="height: 44px; width: 100%; ">
-                            <option value="">Filter Category</option>
-                            @foreach($categories as $category)
-                                <option value="{{$category->id}}">{{$category->name ?? ''}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center" id="product_list">
-                    @foreach($products as $product)
-                        <div class="col mb-5">
-                            <div class="card h-100">
-                                <div class="badge bg-dark text-white position-absolute text-uppercase" style="top: 0.5rem; right: 0.5rem">{{$product->category->name ?? ''}}</div>
-                              
-                                <!-- Product image-->
-                                <img class="card-img-top" width="200" height="190" src="/assets/img/products/{{$product->image ?? ''}}" alt="{{$product->image ?? ''}}" />
-                                <!-- Product details-->
-                                <div class="card-body p-4">
-                                    <div class="text-center">
-                                        <!-- Product name-->
-                                        <h5 class="fw-bolder">{{$product->name ?? ''}}</h5>
-                                        <small class="fw-bolder">{{$product->description ?? ''}}</small> <br>
-                                        <small class="fw-bolder">₱ {{$product->price ?? ''}}</small>
-                                        <!-- Product price-->
-                                        
-                                        
-                                    </div>
-                                </div>
-                                <!-- Product actions-->
-                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><button class="btn btn-primary mt-auto order" product_id="{{$product->id}}">ORDER</button></div>
-                                </div>
-                            </div>
+<section class="py-5 row" style="margin-top: -120px; min-height: 60vh;" >
+        <div class="col-md-3">
+            <div class="card" style="height: 100%;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>Seach a product here:</h5>
+                            <input type="text" id="search-bar" placeholder="Find a product?">
+                            <img class="search-icon" src="{{URL::asset('/assets/img/search-icon.png')}}">
                         </div>
-                    @endforeach
+                        <div class="col-md-12">
+                            <h5>Seach by category:</h5>
+                            <select name="filter_category" id="filter_category" style="height: 44px; width: 100%; ">
+                                <option value="">Filter Category</option>
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name ?? ''}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row gx-4 gx-lg-5 row-cols-2  justify-content-center" id="product_list">
+                        @foreach($products as $product)
+                            <div class="col-md-4 mb-5">
+                                <div class="card h-100">
+                                    <div class="badge bg-dark text-white position-absolute text-uppercase" style="top: 0.5rem; right: 0.5rem">{{$product->category->name ?? ''}}</div>
+                                
+                                    <!-- Product image-->
+                                    <img class="card-img-top" width="200" height="190" src="/assets/img/products/{{$product->image ?? ''}}" alt="{{$product->image ?? ''}}" />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <h4 class="fw-bolder">₱ {{$product->price ?? ''}}</h4>
+                                        <h5 class="fw-bolder">{{$product->name ?? ''}}</h5>
+                                        <small class="fw-bolder">{{$product->description ?? ''}}</small> <br>
+                                            
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><button class="btn btn-primary mt-auto order" product_id="{{$product->id}}">ORDER</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 </section>
 
 <form method="post" id="myForm">

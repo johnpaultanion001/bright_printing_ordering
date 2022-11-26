@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('category_id');
             $table->longText('description')->nullable();
-            $table->date('expiration');
+            $table->date('expiration')->nullable();
             $table->string('price')->nullable();
             $table->string('stock')->nullable();
             $table->timestamps();

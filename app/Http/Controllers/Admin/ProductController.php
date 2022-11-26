@@ -39,7 +39,7 @@ class ProductController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'category' => ['required'],
             'image' =>  ['required' , 'mimes:png,jpg,jpeg,svg,bmp,ico', 'max:2040'],
-            'expiration' => ['required','date', 'after:today'],
+            'expiration' => ['nullable','date', 'after:today'],
             'stock' => ['required','integer','min:1'],
             'price' => ['required','integer','min:1'],
         ]);

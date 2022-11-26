@@ -75,7 +75,7 @@
                                             {{\Illuminate\Support\Str::limit($product->description,50)}}
                                         </td>
                                         <td>
-                                            {{ $product->expiration->format('M j , Y') }}
+                                            {{ $product->expiration ? $product->expiration->format('M j , Y') : '' }}
                                         </td>
                                         <td>
                                             {{ $product->stock ?? '' }}
@@ -142,7 +142,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="form-label">Stock: </label>
+                                <label class="form-label">Stock: <span class="text-danger">*</span></label>
                                 <input type="number" name="stock" id="stock" class="form-control disabled" >
                                 <span class="invalid-feedback" role="alert">
                                     <strong id="error-stock"></strong>
@@ -151,7 +151,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="form-label">Price: </label>
+                                <label class="form-label">Price: <span class="text-danger">*</span></label>
                                 <input type="number" name="price" id="price" class="form-control disabled" >
                                 <span class="invalid-feedback" role="alert">
                                     <strong id="error-price"></strong>
@@ -201,7 +201,7 @@
                         
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" name="action_button" id="action_button" class="btn  btn-primary" value="Save" />
+                        <input type="submit" name="action_button" id="action_button" class="btn  btn-dark" value="Save" />
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
                     </div>
                 </div>

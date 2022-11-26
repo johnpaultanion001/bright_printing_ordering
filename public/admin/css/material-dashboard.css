@@ -17587,3 +17587,10 @@ input#search-bar{
   right: -18px;
 }
 
+.chart-area {
+  position: relative;
+  height: 15rem;
+  width: 100%;
+}
+
+

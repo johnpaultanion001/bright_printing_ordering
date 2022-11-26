@@ -24,8 +24,7 @@ class OrderController extends Controller
             'stock'        => 'Stock: '. $product->stock,
             'price'        => 'Price: ₱ '. $product->price,
             'description'  => $product->description ?? '',
-            'expiration'  => 'Expiration: ₱ '.$product->expiration->format('M j , Y'),
-            'exp'        => $promo ?? '',
+            'expiration'  => 'Expiration: ₱ '.$product->expiration?->format('M j , Y') ?? '' ,
         ];
 
         return response()->json([
