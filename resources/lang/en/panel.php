@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'site_title' => 'LOGO',
+    'site_title' => 'ANDJ Bright Printing Services',
 ];

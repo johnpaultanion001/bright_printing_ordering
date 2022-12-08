@@ -3,7 +3,7 @@
     <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="navbar-brand m-0" href="/admin/dashboard">
       <!-- <img class="bi me-2" src="/assets/img/logo.jfif" alt="logo" width="40" height="32"> -->
-      <span class="text-dark h5">{{ trans('panel.site_title') }}</span>
+      <span class="text-dark h5">ANDJ</span>
     </a>
   </div>
   <hr class="horizontal light mt-0 mb-2">
